@@ -38,7 +38,10 @@
 	--key-bg: var(--fg-secondary);
 }
 
-body { height: 100% }
+body { 
+	height: 100%;
+	touch-action: none;
+}
 
 .light {
 	--fg-primary: #1a1a1b;
