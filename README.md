@@ -1,7 +1,5 @@
 
 ---
-A recreation of the popular game [Wordle](https://www.powerlanguage.co.uk/wordle/) by Josh Wardle, with additional modes and features.
-Hosted on GitHub pages [here](https://mikhad.github.io/wordle/).
 
 ## Additional Features
 - Words are chosen from the list of words at random instead of in sequence, and the solution is not stored in localStorage, making it harder to cheat. The seed for the random number is created from the date, ensuring that everyone gets the same random number, so people can still compare answers.
@@ -23,7 +21,7 @@ Hosted on GitHub pages [here](https://mikhad.github.io/wordle/).
 
 # Technical details
 This is written with Svelte in Typescript. This is my first Svelte project, and is intended as an exercise to help me learn and become proficient in Svelte.
-This is still in development. My goal is to make it as close to the original wordle as possible while also adding additional features. I will continue to make it more similar to the original.
+This is still in development. My goal is to make it as close to the original as possible while also adding additional features. I will continue to make it more similar to the original.
 
 <details>
 <summary>To do</summary>
@@ -59,7 +57,7 @@ This is still in development. My goal is to make it as close to the original wor
 - disallow players from turning hard mode on if the current game wouldn't be possible in hard mode
 - Add toasts
 - Add timer which turns into a refresh button
-- add a refresh button next to the tutorial button when a new wordle is available for a given mode
+- add a refresh button next to the tutorial button when a new gamere is available for a given mode
 - Add google analytics to track number of visitors
 - Add game mode to shared data
 - Add guess distribution
