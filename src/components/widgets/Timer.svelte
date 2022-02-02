@@ -30,7 +30,7 @@
 	$: reset($mode);
 </script>
 
-<h3>Next wordle</h3>
+<h4>Next sWord</h4>
 <div class="container">
 	{#if ms > 0}
 		<div transition:blur class="timer">
