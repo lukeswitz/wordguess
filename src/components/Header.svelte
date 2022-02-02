@@ -46,7 +46,7 @@
 			toaster.pop(modeData.modes[$mode].name);
 		}}
 	>
-		sWords
+		SWORDLE
 	</h1>
 	<div class="icons">
 		{#if showStats}
