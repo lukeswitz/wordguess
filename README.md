@@ -1,6 +1,3 @@
-
----
-
 ## Additional Features
 - Words are chosen from the list of words at random instead of in sequence, and the solution is not stored in localStorage, making it harder to cheat. The seed for the random number is created from the date, ensuring that everyone gets the same random number, so people can still compare answers.
 - When you complete a game the definition of the word is shown on the end of game modal.
@@ -19,13 +16,8 @@
 
 **Infinite mode**: A new word every time you refresh, for the true addicts.
 
-# Technical details
-This is written with Svelte in Typescript. This is my first Svelte project, and is intended as an exercise to help me learn and become proficient in Svelte.
-This is still in development. My goal is to make it as close to the original as possible while also adding additional features. I will continue to make it more similar to the original.
 
-<details>
-<summary>To do</summary>
-
+---
 # To Do
 ## Before Release
 
