@@ -65,7 +65,7 @@
 	</div>
 	{#if tutorial}
 		<div transition:scale class="prompt" on:click={() => dispatch("closeTutPopUp")}>
-			Tap sWords to change game mode
+			Tap SWORDLE to change game mode
 			<span class="ok">OK</span>
 		</div>
 	{/if}
@@ -112,7 +112,7 @@
 	}
 	.ok {
 		padding: 10px;
-		margin-left: var(--padding);
+		margin-left: 0px;
 		border-radius: 4px;
 		color: white;
 		background: var(--color-correct);
