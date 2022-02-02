@@ -15,15 +15,15 @@
 <div class:complete={visible} class="examples">
 	<div><strong>Examples</strong></div>
 	<div class="row">
-		<Tile value="w" state="🟩" />
-		<Tile value="e" state="🔳" />
+		<Tile value="s" state="🟩" />
 		<Tile value="a" state="🔳" />
+		<Tile value="b" state="🔳" />
 		<Tile value="r" state="🔳" />
-		<Tile value="y" state="🔳" />
+		<Tile value="e" state="🔳" />
 	</div>
-	<div>The letter <strong>W</strong> is in the word and in the correct spot.</div>
+	<div>The letter <strong>S</strong> is in the word and in the correct spot.</div>
 	<div class="row">
-		<Tile value="p" state="🔳" />
+		<Tile value="b" state="🔳" />
 		<Tile value="i" state="🟨" />
 		<Tile value="l" state="🔳" />
 		<Tile value="l" state="🔳" />
@@ -31,13 +31,13 @@
 	</div>
 	<div>The letter <strong>I</strong> is in the word but in the wrong spot.</div>
 	<div class="row">
-		<Tile value="v" state="🔳" />
-		<Tile value="a" state="🔳" />
-		<Tile value="g" state="🔳" />
-		<Tile value="u" state="⬛" />
-		<Tile value="e" state="🔳" />
+		<Tile value="s" state="🔳" />
+		<Tile value="n" state="🔳" />
+		<Tile value="o" state="🔳" />
+		<Tile value="w" state="⬛" />
+		<Tile value="y" state="🔳" />
 	</div>
-	<div>The letter <strong>U</strong> is not in the word in any spot.</div>
+	<div>The letter <strong>W</strong> is not in the word in any spot.</div>
 </div>
 <div>
 	Open the settings menu to see some of the additional features.
