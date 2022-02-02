@@ -40,13 +40,6 @@
 	<div>The letter <strong>U</strong> is not in the word in any spot.</div>
 </div>
 <div>
-	This is a recreation of the original <a
-		href="https://www.powerlanguage.co.uk/wordle/"
-		target="_blank">Wordle</a
-	>
-	by Josh Wardle with additional modes and features. Written with Svelte, in Typescript by
-	<a href="https://github.com/MikhaD" target="_blank">MikhaD</a>.
-	<br />
 	Open the settings menu to see some of the additional features.
 </div>
 
