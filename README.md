@@ -1,3 +1,8 @@
+<div align="left">
+  <a href="https://lukeswitz.github.io/wordguess/" ><img src="https://github.com/lukeswitz/wordguess/workflows/Publish/badge.svg?branch=main" alt="Publish workflow"/></a>
+  <img src="https://img.shields.io/github/package-json/v/lukeswitz/wordguess" alt="GitHub package.json version" />
+</div>
+
 ### Additional Features
 
 - Words are chosen from the list of words at random instead of in sequence, and the solution is not stored in localStorage, making it harder to cheat. The seed for the random number is created from the date, ensuring that everyone gets the same random number, so people can still compare answers for daily & hourly games.
