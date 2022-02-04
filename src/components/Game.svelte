@@ -109,6 +109,7 @@
 	function lose() {
 		++game.guesses;
 		game.active = false;
+                setTimeout(() => toaster.pop(word.toUpperCase()), DELAY_INCREMENT * ROWS);
 		setTimeout(() => (showStats = true), delay);
 		if (!modeData.modes[$mode].historical) {
 			++stats.guesses.fail;
