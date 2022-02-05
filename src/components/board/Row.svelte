@@ -27,7 +27,7 @@
 	class:complete={guesses > num}
 >
 	{#each Array(COLS) as _, i}
-		<Tile bind:this={tiles[i]} state={state[i]} value={value.charAt(i)} position={i} />
+		<Tile bind:this={tiles[i]} state={evaluation[i]} value={value.charAt(i)} position={i+num} />
 	{/each}
 </div>
 
