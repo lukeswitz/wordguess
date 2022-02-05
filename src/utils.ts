@@ -138,7 +138,7 @@ export function seededRandomInt(min: number, max: number, seed: number) {
 	return Math.floor(min + (max - min) * rng());
 }
 
-export const DELAY_INCREMENT = 100;
+export const DELAY_INCREMENT = 150;
 
 export const PRAISE = [
 	"Genius",
