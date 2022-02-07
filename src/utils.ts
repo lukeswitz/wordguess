@@ -101,7 +101,7 @@ export function newSeed(mode: GameMode) {
 	
 }
 
-export function changeTimezone(date, ianatz) {
+function changeTimezone(date, ianatz) {
 
   var invdate = new Date(date.toLocaleString('en-US', {
     timeZone: ianatz
