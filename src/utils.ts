@@ -88,13 +88,17 @@ export const keys = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
 
 export function newSeed(mode: GameMode) {
 	const today = new Date();
+	var there = new Date(today.toLocaleString('en-US', {
+    		timeZone: "America/Toronto" }));
+	var diff = today.getTime() - there.getTime();
+
 	switch (mode) {
 		case GameMode.daily:
-			return new Date(today.getFullYear(), today.getMonth(), today.getDate()).valueOf();
+			return new Date(there.getFullYear(), there.getMonth(), there.getDate()).valueOf() + diff;
 		case GameMode.hourly:
-			return new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours()).valueOf();
+			return new Date(there.getFullYear(),  there.getMonth(), there.getDate(), there.getHours()).valueOf() + diff;
 		case GameMode.infinite:
-			return new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(), today.getSeconds()).valueOf();
+			return new Date(there.getFullYear(), there.getMonth(), there.getDate(), there.getHours(), there.getMinutes(), there.getSeconds()).valueOf() + diff;
 	}
 }
 
