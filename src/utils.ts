@@ -88,17 +88,17 @@ export const keys = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
 
 export function newSeed(mode: GameMode) {
 	const today = new Date();
-	var there = new Date(today.toLocaleString('en-US', {
+	const there = new Date(today.toLocaleString('en-US', {
     		timeZone: "America/Toronto" }));
-	var diff = today.getTime() - there.getTime();
-
-	switch (mode) {
+	const diff = today.getTime() - there.getTime();
+	
+	switch (mode) {//code is a mess here, using the date as milliseconds for a static value
 		case GameMode.daily:
-			return new Date(there.getFullYear(), there.getMonth(), there.getDate()).valueOf() + diff;
+			return new Date(there.getTime() + diff).valueOf();
 		case GameMode.hourly:
-			return new Date(there.getFullYear(),  there.getMonth(), there.getDate(), there.getHours()).valueOf() + diff;
+			return new Date(there.getTime() + diff).valueOf();
 		case GameMode.infinite:
-			return new Date(there.getFullYear(), there.getMonth(), there.getDate(), there.getHours(), there.getMinutes(), there.getSeconds()).valueOf() + diff;
+			return new Date(there.getTime() + diff).valueOf();
 	}
 }
 
