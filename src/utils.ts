@@ -96,11 +96,11 @@ export function newSeed(mode: GameMode) {
 	const today = new Date();
 	switch (mode) {
 		case GameMode.daily:
-			return (today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()).valueOf();
+			return new Date(today.getFullYear(), today.getMonth(), today.getDate()).valueOf();
 		case GameMode.hourly:
-			return (today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), today.getUTCHours()).valueOf();
+			return new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours()).valueOf();
 		case GameMode.infinite:
-			return (today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate(), today.getUTCHours(), today.getUTCMinutes(), today.getUTCSeconds()).valueOf();
+			return new Date(today.getFullYear(), today.getMonth(), today.getDate(), today.getHours(), today.getMinutes(), today.getSeconds()).valueOf();
 	}
 }
 
