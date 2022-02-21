@@ -74,7 +74,7 @@ export function getState(word: string, guess: string): LetterState[] {
 		}
 	}
 	for (let i = 0; i < word.length; ++i) {
-		if (charArr.includes(guess.charAt(i)) && result[i] !== "🟩" || word.includes(guessArr[i]) && result[i] !== "🟩" ) {
+		if (charArr.includes(guess.charAt(i)) && result[i] !== "🟩") {
 			result[i] = "🟨";
 			charArr[charArr.indexOf(guess.charAt(i))] = "$";
 		}
