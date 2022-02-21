@@ -66,19 +66,19 @@ export function getRowData(n: number, board: GameBoard) {
 export function getState(word: string, guess: string): LetterState[] {
 	const charArr = word.split("");
 	const guessArr = guess.split("");
-	const result = Array<LetterState>(COLS).fill("⬛");
+	const result = Array(5).fill("⬛");
 	for (let i = 0; i < word.length; ++i) {
-		if (charArr[i] === guess.charAt(i) || word.includes(guessArr[i])) {
+		if (charArr[i] === guess.charAt(i)) {
 			result[i] = "🟩";
 			charArr[i] = "$";
 		}
 	}
 	for (let i = 0; i < word.length; ++i) {
-		if (charArr.includes(guess.charAt(i)) && result[i] !== "🟩") {
+		if (charArr.includes(guess.charAt(i)) && result[i] !== "🟩" || word.includes(guessArr[i]) && result[i] !== "🟩" ) {
 			result[i] = "🟨";
 			charArr[charArr.indexOf(guess.charAt(i))] = "$";
 		}
-	}    
+	}
 	return result;
 }
 
