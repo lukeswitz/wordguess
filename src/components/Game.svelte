@@ -96,7 +96,7 @@
 			++stats.played;
 			if ("streak" in stats) {
 				stats.streak =
-					modeData.modes[$mode].seed - stats.lastGame >= modeData.modes[$mode].unit
+					modeData.modes[$mode].seed - stats.lastGame > modeData.modes[$mode].unit
 						? 1
 						: stats.streak + 1;
 				if (stats.streak > stats.maxStreak) stats.maxStreak = stats.streak;
