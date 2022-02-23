@@ -2,14 +2,24 @@
 	import type Toaster from "./Toaster.svelte";
 
 	import { mode } from "../../stores";
-	import { modeData, ROWS } from "../../utils";
+	import { COLS, modeData } from "../../utils";
 	import { getContext } from "svelte";
 
 	export let state: GameState;
 	const toaster = getContext<Toaster>("toaster");
 
-	$: stats = `${modeData.modes[$mode].name} Swordle #${state.wordNumber} ${
-		state.guesses <= ROWS ? state.guesses : "X"
+	function failed() {
+		if (state.guesses === 0) {
+			return false;
+		}
+		if (state.board.state[state.guesses - 1].join("") === "🟩".repeat(COLS)) {
+			return true;
+		}
+		return false;
+	}
+
+	$: stats = `${modeData.modes[$mode].name} Wordle+ #${state.wordNumber} ${
+		!state.active && failed() ? state.guesses : "X"
 	}/${state.board.words.length}\n\n    ${state.board.state
 		.slice(0, state.guesses)
 		.map((r) => r.join(""))
@@ -31,8 +41,9 @@
 	</svg>
 </div>
 
-<style>
+<style lang="scss">
 	div {
+		color: #fff;
 		font-size: var(--fs-medium);
 		text-transform: uppercase;
 		font-weight: bold;
@@ -45,8 +56,8 @@
 		gap: 8px;
 		width: 80%;
 		cursor: pointer;
-	}
-	div:hover {
-		opacity: 0.9;
+		&:hover {
+			opacity: 0.9;
+		}
 	}
 </style>
