@@ -18,7 +18,7 @@
 		return false;
 	}
 
-	$: stats = `${modeData.modes[$mode].name} Wordle+ #${state.wordNumber} ${
+	$: stats = `${modeData.modes[$mode].name} Swordle #${state.wordNumber} ${
 		!state.active && failed() ? state.guesses : "X"
 	}/${state.board.words.length}\n\n    ${state.board.state
 		.slice(0, state.guesses)
