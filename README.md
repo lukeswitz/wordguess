@@ -15,7 +15,8 @@
 - Right clicking/double tapping a submitted word on the board will tell you how many possible words could have been played there, taking all previous information into account.
 - Right clicking/double tapping the row below the last submitted word will tell you how many possibilities there are taking all previous information into account.
 - The game mode is reflected in the url, allowing you to share a game mode directly.
-- Service worker which allows the game to be easily downloaded as a progressive web app and run offline. 
+- Service worker which allows the game to be easily downloaded as a progressive web app and run offline.
+- Give Up button.
 
 ## Additional modes
 **Hourly mode**: A new word every hour.
@@ -24,4 +25,11 @@
 
 ##### Credit to @MikhaD for the original repository, thank you.
 
+<details>
+<summary>To do</summary>
+
+# To Do
+- Fix nonsense with timings & delay variable
+- Tidy up animation code and make animation mechanism consistant (if possible)
+- Look into improving the performance
 </details>
