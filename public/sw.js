@@ -1,5 +1,5 @@
 // Increase the v number when the app is updated
-const cacheName = "wordle+-v1.1.1";
+const cacheName = "swordle-v1.2.0";
 
 const assetsToCache = [
 	"./",

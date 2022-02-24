@@ -1,7 +1,7 @@
 {
   "name": "swordle",
   "description": "A remake of the popular game with additional modes and features.",
-  "version": "1.1.1",
+  "version": "1.2.0",
   "private": "true",
   "scripts": {
     "build": "rollup -c",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MikhaD/wordle.git"
+    "url": "git+https://github.com/lukeswitz/wordguess.git"
   },
   "keywords": [],
-  "author": "MikhaD",
+  "author": "lukeswitz",
   "bugs": {
-    "url": "https://github.com/MikhaD/wordle/issues"
+    "url": "https://github.com/lukeswitz/wordguess/issues"
   },
-  "homepage": "https://github.com/MikhaD/wordle#readme",
+  "homepage": "https://github.com/lukeswitz/wordguess#readme",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-node-resolve": "^13.1.3",

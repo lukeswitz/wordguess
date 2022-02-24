@@ -1,7 +1,7 @@
 {
-	"short_name": "Wordle+",
-	"name": "Wordle",
-	"start_url": "https://mikhad.github.io/wordle/",
+	"short_name": "Swordle",
+	"name": "Swordle",
+	"start_url": "https://lukeswitz.github.io/wordguess/",
 	"background_color": "#6aaa64",
 	"theme_color": "#6aaa64",
 	"description": "A daily, hourly, INFINITE word game",

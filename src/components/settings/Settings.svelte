@@ -63,7 +63,7 @@
 	<div class="footer">
 
 		<div>
-			<div>v1.1.1</div>
+			<div>v1.2.0</div>
 			<div
 				class="word"
 				on:contextmenu|preventDefault={() => {
