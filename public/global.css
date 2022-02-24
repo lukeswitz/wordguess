@@ -31,6 +31,7 @@
 	--bg-secondary: #1a1a1b;
 	--bg-primary: #121213;
 	
+	--red: #9C2323;
 	--color-present: #b59f3b;
 	--color-correct: #538d4e;
 	--color-absent: var(--border-primary);
@@ -52,6 +53,7 @@ body {
 	--bg-secondary: #e0e0e0;
 	--bg-primary: #ffffff;
 
+	--red: #C42C2C;
 	--color-present: #c9b458;
 	--color-correct: #6aaa64;
 	--color-absent: var(--fg-secondary);
@@ -77,4 +79,43 @@ h3 {
 a:link,
 a:visited {
 	color: inherit;
+}
+
+.tutorial {
+	--arrow-size: 10px;
+	--padding: 10px;
+	font-size: var(--fs-small);
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: initial;
+	position: absolute;
+	top: calc(var(--arrow-size) + var(--height));
+	left: 50%;
+	transform: translateX(-50%);
+	width: max-content;
+	max-width: min(var(--game-width), 95vw);
+	display: flex;
+	align-items: center;
+	padding: var(--padding);
+	border-radius: 4px;
+	color: var(--bg-primary);
+	background: var(--fg-primary);
+	z-index: 1;
+}
+.tutorial::before {
+	content: "";
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
+	top: calc(-2 * var(--arrow-size));
+	border: var(--arrow-size) solid transparent;
+	border-bottom: var(--arrow-size) solid var(--fg-primary);
+}
+.ok {
+	padding: 10px;
+	margin-left: var(--padding);
+	border-radius: 4px;
+	color: white;
+	background: var(--color-correct);
+	cursor: pointer;
 }

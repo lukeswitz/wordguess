@@ -3,7 +3,7 @@
 	import { Board } from "./board";
 	import Keyboard from "./keyboard";
 	import Modal from "./Modal.svelte";
-	import { onMount, setContext } from "svelte";
+	import { getContext, onMount, setContext } from "svelte";
 	import Settings from "./settings";
 	import {
 		Share,
@@ -15,6 +15,7 @@
 		Timer,
 		Toaster,
 		ShareGame,
+		Tips,
 	} from "./widgets";
 	import {
 		contractNum,
@@ -39,17 +40,22 @@
 	export let toaster: Toaster;
 
 	setContext("toaster", toaster);
+	const version = getContext<string>("version");
 
 	// implement transition delay on keys
 	const delay = DELAY_INCREMENT * ROWS + 800;
 
-	let showTutorial = $settings.tutorial === 2;
+	let showTutorial = $settings.tutorial === 3;
 	let showSettings = false;
 	let showStats = false;
 	let showRefresh = false;
 
 	let board: Board;
 	let timer: Timer;
+	let tips: Tips;
+
+	let tip = 0;
+	$: if (showSettings && tips) tip = Math.floor(tips.length * Math.random());
 
 	function submitWord() {
 		if (game.board.words[game.guesses].length !== COLS) {
@@ -77,11 +83,11 @@
 			const state = getState(word, game.board.words[game.guesses]);
 			game.board.state[game.guesses] = state;
 			state.forEach((e, i) => {
-  				const ls = $letterStates[game.board.words[game.guesses][i]];
-  				if (ls === "🔳" || e === "🟩") {
-  					$letterStates[game.board.words[game.guesses][i]] = e;
-  				}
-  			});
+				const ls = $letterStates[game.board.words[game.guesses][i]];
+				if (ls === "🔳" || e === "🟩") {
+					$letterStates[game.board.words[game.guesses][i]] = e;
+				}
+			});
 			++game.guesses;
 			if (game.board.words[game.guesses - 1] === word) win();
 			else if (game.guesses === ROWS) lose();
@@ -94,7 +100,10 @@
 	function win() {
 		board.bounce(game.guesses - 1);
 		game.active = false;
-		setTimeout(() => toaster.pop(PRAISE[game.guesses - 1]), DELAY_INCREMENT * ROWS);
+		setTimeout(
+			() => toaster.pop(PRAISE[game.guesses - 1]),
+			DELAY_INCREMENT * COLS + DELAY_INCREMENT
+		);
 		setTimeout(() => (showStats = true), delay * 1.4);
 		if (!modeData.modes[$mode].historical) {
 			++stats.guesses[game.guesses];
@@ -124,6 +133,12 @@
 		}
 	}
 
+	function concede() {
+		showSettings = false;
+		setTimeout(() => (showStats = true), DELAY_INCREMENT);
+		lose();
+	}
+
 	function reload() {
 		modeData.modes[$mode].historical = false;
 		modeData.modes[$mode].seed = newSeed($mode);
@@ -146,8 +161,8 @@
 <main class:guesses={game.guesses !== 0} style="--rows: {ROWS}; --cols: {COLS}">
 	<Header
 		bind:showRefresh
-		tutorial={$settings.tutorial === 1}
-		on:closeTutPopUp={() => ($settings.tutorial = 0)}
+		tutorial={$settings.tutorial === 2}
+		on:closeTutPopUp|once={() => ($settings.tutorial = 1)}
 		showStats={stats.played > 0 || (modeData.modes[$mode].historical && !game.active)}
 		on:stats={() => (showStats = true)}
 		on:tutorial={() => (showTutorial = true)}
@@ -157,6 +172,8 @@
 	<Board
 		bind:this={board}
 		bind:value={game.board.words}
+		tutorial={$settings.tutorial === 1}
+		on:closeTutPopUp|once={() => ($settings.tutorial = 0)}
 		board={game.board}
 		guesses={game.guesses}
 		icon={modeData.modes[$mode].icon}
@@ -173,13 +190,13 @@
 			showStats = false;
 			showSettings = false;
 		}}
-		disabled={!game.active || $settings.tutorial === 2}
+		disabled={!game.active || $settings.tutorial === 3}
 	/>
 </main>
 
 <Modal
 	bind:visible={showTutorial}
-	on:close|once={() => $settings.tutorial === 2 && --$settings.tutorial}
+	on:close|once={() => $settings.tutorial === 3 && --$settings.tutorial}
 	fullscreen={$settings.tutorial === 0}
 >
 	<Tutorial visible={showTutorial} />
@@ -208,10 +225,31 @@
 </Modal>
 
 <Modal fullscreen={true} bind:visible={showSettings}>
-	<Settings visible={showSettings} wordNumber={game.wordNumber} validHard={game.validHard} />
+	<Settings state={game} />
+	{#if game.active}
+		<div class="concede" on:click={concede}>give up</div>
+	{/if}
+	<Tips bind:this={tips} index={tip} />
+
+	<div slot="footer">
+		<a href="https://www.powerlanguage.co.uk/wordle/" target="_blank">Original Wordle</a>
+		<div>
+			<div>v{version}</div>
+			<div
+				title="double click to reset your stats"
+				class="word"
+				on:dblclick={() => {
+					localStorage.clear();
+					toaster.pop("localStorage cleared");
+				}}
+			>
+				{modeData.modes[$mode].name} word #{game.wordNumber}
+			</div>
+		</div>
+	</div>
 </Modal>
 
-<style>
+<style lang="scss">
 	main {
 		display: flex;
 		flex-direction: column;
@@ -227,5 +265,20 @@
 		margin-top: 10px;
 		padding: 0 20px;
 		text-transform: uppercase;
+	}
+	.concede {
+		margin-top: 15px;
+		text-transform: uppercase;
+		color: #fff;
+		cursor: pointer;
+		font-size: var(--fs-medium);
+		font-weight: bold;
+		padding: 15px;
+		border-radius: 4px;
+		text-align: center;
+		background-color: var(--red);
+		&:hover {
+			opacity: 0.9;
+		}
 	}
 </style>

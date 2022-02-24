@@ -16,7 +16,7 @@
 	let animation = "";
 
 	// reset animation when value changes, because for some reason changing anination to "" when the game is over causes the tiles to flash
- 	$: !value && (animation = "");
+	$: !value && (animation = "");
 
 	// ensure all animations play
 	const unsub = mode.subscribe(() => {
@@ -75,7 +75,8 @@
 	}
 	.front {
 		border: 2px solid var(--border-primary);
-		transform: rotateY(0deg);
+		transform: rotateX(0deg);
+		color: var(--fg-primary);
 	}
 	.back {
 		background: var(--color-absent);

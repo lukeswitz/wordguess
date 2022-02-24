@@ -1,3 +1,4 @@
+//! IF ANYTHING IN THIS FILE IS CHANGED MAKE SURE setVersion.js HAS ALSO BEEN UPDATED
 // Increase the v number when the app is updated
 const cacheName = "swordle-v1.2.0";
 

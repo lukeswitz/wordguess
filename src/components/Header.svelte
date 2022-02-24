@@ -64,7 +64,7 @@
 		</GameIcon>
 	</div>
 	{#if tutorial}
-		<div transition:scale class="prompt" on:click={() => dispatch("closeTutPopUp")}>
+		<div transition:scale class="tutorial" on:click={() => dispatch("closeTutPopUp")}>
 			Tap SWORDLE to change game mode
 			<span class="ok">OK</span>
 		</div>
@@ -84,39 +84,6 @@
 		width: 100%;
 		height: var(--height);
 		position: relative;
-	}
-	.prompt {
-		--arrow-size: 10px;
-		--padding: 10px;
-		font-size: var(--fs-small);
-		letter-spacing: initial;
-		position: absolute;
-		inset: calc(var(--arrow-size) + var(--height)) 0 0 0;
-		width: fit-content;
-		height: fit-content;
-		padding: 14px var(--padding);
-		margin: 0 auto;
-		border-radius: 4px;
-		color: var(--bg-primary);
-		background: var(--fg-primary);
-		z-index: 1;
-		::before {
-			content: "";
-			position: absolute;
-			left: 50%;
-			transform: translate(-50%);
-			top: calc(-2 * var(--arrow-size));
-			border: var(--arrow-size) solid transparent;
-			border-bottom: var(--arrow-size) solid var(--fg-primary);
-		}
-	}
-	.ok {
-		padding: 10px;
-		margin-left: 0px;
-		border-radius: 4px;
-		color: white;
-		background: var(--color-correct);
-		cursor: pointer;
 	}
 	.icons {
 		height: 100%;
