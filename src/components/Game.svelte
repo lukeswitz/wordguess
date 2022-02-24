@@ -232,7 +232,6 @@
 	<Tips bind:this={tips} index={tip} />
 
 	<div slot="footer">
-		<a href="https://www.powerlanguage.co.uk/wordle/" target="_blank">Original Wordle</a>
 		<div>
 			<div>v{version}</div>
 			<div
