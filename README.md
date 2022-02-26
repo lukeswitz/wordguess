@@ -3,12 +3,13 @@
   <img src="https://img.shields.io/github/package-json/v/lukeswitz/wordguess" alt="GitHub package.json version" />
 </div>
 
+#### Swordle 🧩 Word Puzzles
 
 - Game Modes: Play a new word daily, hourly or at your convenience. 
 - Private: You won't find Google Analytics in this version. Storage done on-device. 
 - Adaptive: Open an issue to add/remove words and with any other suggestions or bugs. 
  
-### Swordle Features
+##### Swordle Features
 
 - Words are chosen from the list of words at random instead of in sequence.
 - Definitions of the word are shown on the end of game.
@@ -19,7 +20,7 @@
 - The game mode is reflected in the url, allowing you to share a game directly. 
 - Easily downloaded as a progressive web app and run offline using the Share feature of most browsers. 
 
-## Additional modes
+##### Additional modes
 **Hourly mode**: A new word every hour.
 **Infinite mode**: A new word every time you refresh, for the true addicts.
 
