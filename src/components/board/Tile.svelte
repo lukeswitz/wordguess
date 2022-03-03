@@ -80,7 +80,7 @@
 	}
 	.back {
 		background: var(--color-absent);
-		transform: rotateY(180deg);
+		transform: rotateX(180deg);
 	}
 	.🟩 .back {
 		background: var(--color-correct);
@@ -91,12 +91,12 @@
 	:global(.complete) .tile:not(.🔳) .front {
 		transition-delay: inherit !important;
 		transition-duration: 0.8s;
-		transform: rotateY(180deg);
+		transform: rotateX(180deg);
 	}
 	:global(.complete) .tile:not(.🔳) .back {
 		transition-delay: inherit !important;
 		transition-duration: 0.8s;
-		transform: rotateY(0deg);
+		transform: rotateX(0deg);
 	}
 	@keyframes pop {
 		from {
