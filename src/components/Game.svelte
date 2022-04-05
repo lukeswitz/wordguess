@@ -151,7 +151,6 @@
 	}
 
 	onMount(() => {
-		if (!game.active) setTimeout(() => (toaster.pop(word), 120);
 		if (!game.active) setTimeout(() => (showStats = true), delay);
 	});
 //	 $: toaster.pop(word);
