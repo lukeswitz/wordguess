@@ -62,6 +62,7 @@
 				if (!temp.wordNumber) {
 					temp.wordNumber = getWordNumber(m);
 				}
+				setTimeout(() => toaster.pop(word.toUpperCase()), 150 * 6);
 				state = temp;
 			}
 		}
