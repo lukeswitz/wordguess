@@ -1,5 +1,5 @@
 <div align="left">
-  <a href="https://lukeswitz.github.io/wordguess/" ><img src="https://github.com/lukeswitz/wordguess/workflows/Publish/badge.svg?branch=main" alt="Publish workflow"/></a>
+  <a href="https://lukeswitz.github.io/wordguess/" ><img src="https://github.com/lukeswitz/wordguess/workflows/Publish/badge.svg" alt="Publish workflow"/></a>
   <img src="https://img.shields.io/github/package-json/v/lukeswitz/wordguess" alt="GitHub package.json version" />
 </div>
 
