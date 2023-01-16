@@ -5,6 +5,8 @@
 
 #### Swordle 🧩 Word Puzzles
 
+A recreation of the popular game Wordle by Josh Wardle (now owned by the New York Times), with additional features. 
+
 - Game Modes: Play a new word daily, hourly or at your convenience. 
 - Private: You won't find Google Analytics in this version. Storage done on-device. 
 - Adaptive: Open an issue to add/remove words and with any other suggestions or bugs. 
@@ -24,3 +26,6 @@
 **Hourly mode**: A new word every hour.
 **Infinite mode**: A new word every time you refresh, for the true addicts.
 
+
+
+Forked from @MikhaD, without his Google analytics.  
